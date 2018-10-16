@@ -10,6 +10,7 @@ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 // curl_setopt($ch, CURLOPT_POSTFIELDS, '{ "client_url":"https://itgadget.co.th","client_rest_api_endpoint":"","client_transaction_id":"asdadwdasda321545453","bank_account":"John Doe","bank_no": "999-9-9999-9","bank_name":"kasikorn","bank_short_name":"KBANK","transfer_type":"ATM","amount":"2999","transferred_datetime": "2018-01-01 10:00:00","transfer_detail": "Some comment message from user","is_approved": "false"}'); 
 
 // https://stackoverflow.com/questions/2138527/php-curl-http-post-sample-code
+// NOTE!!! : is_approve is boolean must send with '', 0, false, FALSE
 curl_setopt($ch, CURLOPT_POSTFIELDS, 
   http_build_query(
     array(
@@ -24,7 +25,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,
       "amount" => "2999",
       "transferred_datetime" => "2018-01-01 10:00:00",
       "transfer_detail" => "Some comment message from user",
-      "is_approved" => ""
+      "is_approved" => FALSE
     )
   )
 ); 
