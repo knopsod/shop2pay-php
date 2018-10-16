@@ -1,7 +1,7 @@
 <?php 
 
-// $url = 'http://shop2pay-dev-test.herokuapp.com/api/v1/transactions'; 
-$url = 'http://localhost:3000/api/v1/transactions'; 
+$url = 'http://shop2pay-dev-test.herokuapp.com/api/v1/transactions'; 
+// $url = 'http://localhost:3000/api/v1/transactions'; 
 $ch = curl_init($url); 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 curl_setopt($ch,CURLOPT_POST, true); 
@@ -31,9 +31,10 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,
 // execute! 
 $response = curl_exec($ch); 
 
-if($response === false) 
-{ 
-echo ' ' . curl_error($ch); 
-} 
+if($response === false) { 
+  echo ' ' . curl_error($ch); 
+} else {
+  echo 'success -> '. $response;
+}
 curl_close($ch); 
 print_r($response);
