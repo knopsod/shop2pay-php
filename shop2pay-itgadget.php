@@ -24,7 +24,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,
       "amount" => "2999",
       "transferred_datetime" => "2018-01-01 10:00:00",
       "transfer_detail" => "Some comment message from user",
-      "is_approved" => "false"
+      "is_approved" => FALSE
     )
   )
 ); 
